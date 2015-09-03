@@ -1,0 +1,18 @@
+#修改某个显卡的配置文件
+vim /etc/sysconfig/network-scripts/ifcfg-eth0
+
+#加入内容
+PEERDNS=no
+DNS1=192.168.1.1
+DNS2=192.168.1.2
+
+#下面几个命令直接验证中，可以执行
+
+#检查link 
+cat /etc/resolv.conf
+
+#重启network服务
+service network restart
+
+#重启系统
+reboot
